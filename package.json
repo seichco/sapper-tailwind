@@ -3,7 +3,8 @@
   "description": "Template for sapper and tailwind",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
+    "dev": "npm-run-all --parallel dev:sapper watch:tailwind",
+    "dev:sapper": "sapper dev",
     "build": "npm run build:tailwind && sapper build --legacy",
     "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",
     "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
